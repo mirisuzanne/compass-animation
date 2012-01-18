@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.summary = %q{css3 animations plugin for compass}
   s.description = %q{css3 animations plugin for compass}
   s.email = "eric@oddbird.net"
-  s.homepage = "http://github.com/ericam/animation.git"
+  s.homepage = "https://github.com/ericam/compass-animation"
 
   # Gem Files
   s.files = %w(README.mkdn)
