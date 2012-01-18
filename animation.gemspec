@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/ericam/compass-animation"
 
   # Gem Files
-  s.files = %w(README.mkdn)
+  s.files = %w(README.mdown)
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
 
