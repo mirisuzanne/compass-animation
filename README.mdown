@@ -5,7 +5,6 @@ First and foremost, this plugin gives you all the tools you need to write and ap
 
 **This plugin requires the most recent alpha releases of both Sass (3.2.0.alpha.35) and Compass (0.12.alpha.0).**
 
-
     gem install animation --pre
 
     require 'animation'
