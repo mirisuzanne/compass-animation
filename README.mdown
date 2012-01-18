@@ -3,4 +3,66 @@ Animation Compass Plugin
 
 First and foremost, this plugin gives you all the tools you need to write and apply css3 animations. As a bonus, and only if you so choose, it also supplies you with a "shit-ton" (roughly 2 metric tons) of pre-fabricated animations taken from Dan Eden's "[Animate.css](http://daneden.me/animate/)" project.
 
-It's a funny thing. This plugin is built in Sass rather than Scss, because it [only works in Sass](https://gist.github.com/1607696). It also requires the most recent alpha releases of both Sass (3.2.0.alpha.35) and Compass (0.12.alpha.0).
+**This plugin requires the most recent alpha releases of both Sass (3.2.0.alpha.35) and Compass (0.12.alpha.0).**
+
+
+    gem install animation --pre
+
+    require 'animation'
+
+    @import animation
+
+## Animation
+
+The default import only includes the core mixins for creating animations. They are:
+
+    // create your animation
+    +keyframes($name)
+      @content
+
+    // apply animation(s) and adjust settings
+    +animation-name([$name-1, $name-2, ..., name-10])
+    +animation-duration([$duration-1, $duration-2, ..., duration-10])
+    +animation-delay([$delay-1, $delay-2, ..., delay-10])
+    +animation-timing-function([$function-1, $function-2, ..., function-10])
+    +animation-iteration-count([$count-1, $count-2, ..., count-10])
+    +animation-direction([$direction-1, $direction-2, ..., direction-10])
+    +animation-fill-mode([$mode-1, $mode-2, ..., mode-10])
+
+    // shortcut to apply and adjust
+    +animation([$animation-1, $animation-2, ..., animation-10])
+
+There are default variables available for all of them:
+
+    $default-animation-name             : false
+    $default-animation-duration         : false
+    $default-animation-delay            : false
+    $default-animation-timing-function  : false
+    $default-animation-iteration-count  : false
+    $default-animation-direction        : false
+    $default-animation-fill-mode        : false
+
+## Animate.css
+
+Because the Animate code creates output, you need to import it (or one of it's sob-modules) directly:
+
+    @import animation/animate
+
+That will create the following named animations:
+
+* Attention seekers
+  - flash bounce shake tada swing wobble pulse
+* Fading entrances
+  - fadeIn fadeInUp fadeInDown fadeInLeft fadeInRight fadeInUpBig fadeInDownBig fadeInLeftBig fadeInRightBig
+* Fading exits
+  - fadeOut fadeOutUp fadeOutDown fadeOutLeft fadeOutRight fadeOutUpBig fadeOutDownBig fadeOutLeftBig fadeOutRightBig
+* Bouncing entrances
+  - bounceIn bounceInDown bounceInUp bounceInLeft bounceInRight
+* Bouncing exits
+  - bounceOut bounceOutDown bounceOutUp bounceOutLeft bounceOutRight
+* Rotating entrances
+  - rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight
+* Rotating exits
+  - rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight
+* Specials
+  - hinge rollIn rollOut
