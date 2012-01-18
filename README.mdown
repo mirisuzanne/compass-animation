@@ -1,0 +1,6 @@
+Animation Compass Plugin
+========================
+
+First and foremost, this plugin gives you all the tools you need to write and apply css3 animations. As a bonus, and only if you so choose, it also supplies you with a "shit-ton" (roughly 2 metric tons) of pre-fabricated animations taken from Dan Eden's "[Animate.css](http://daneden.me/animate/)" project.
+
+It's a funny thing. This plugin is built in Sass rather than Scss, because it [only works in Sass](https://gist.github.com/1607696).
