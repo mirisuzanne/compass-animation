@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   # Release Specific Information
-  s.version = "0.1.alpha.2"
+  s.version = "0.1.alpha.3"
 
   # Gem Details
   s.name = "animation"
