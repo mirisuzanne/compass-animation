@@ -9,7 +9,7 @@ First and foremost, this plugin gives you all the tools you need to write and ap
 
     require 'animation'
 
-    @import animation
+    @import "animation";
 
 ## Animation
 
@@ -50,10 +50,10 @@ Say you want to create your own animation. Start with the keyframes:
 
     @keyframes(my-animation) {
       0%, 100% {
-        background-color: blue
+        background-color: blue;
       }
       50% {
-        background-color: red
+        background-color: red;
       }
     }
 
@@ -67,10 +67,10 @@ Compare that to the official CSS:
 
     @keyframes my-animation {
       0%, 100% {
-        background-color: blue
+        background-color: blue;
       }
       50% {
-        background-color: red
+        background-color: red;
       }
     }
 
@@ -85,7 +85,7 @@ Pretty much identical. You're just using include/argument pairs instead of prope
 
 Because the Animate code creates output, you need to import it (or one of it's sob-modules) directly:
 
-    @import animation/animate
+    @import "animation/animate";
 
 That will create the following named animations:
 
@@ -111,11 +111,11 @@ That will create the following named animations:
 You can use them like this:
 
     .widget {
-      @include animation(fadeIn)
+      @include animation(fadeIn);
     }
 
 You can also import a set of predefined classes for each animation:
 
-    @import animation/animate/classes
+    @import "animation/animate/classes";
 
 With those classes imported, you can simply add the class of `fadeIn` to any element, and watch it do the magic. That's all there is to it.
