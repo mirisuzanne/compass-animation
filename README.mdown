@@ -13,35 +13,73 @@ First and foremost, this plugin gives you all the tools you need to write and ap
 
 ## Animation
 
-The default import only includes the core mixins for creating animations. They are:
+The default import only includes the core mixins for creating animations. That covers all the expected properties, to be used exactly as you would in CSS:
 
     // create your animation
-    +keyframes($name)
-      @content
+    @include keyframes($name) {
+      @content;
+    }
 
     // apply animation(s) and adjust settings
-    +animation-name([$name-1, $name-2, ..., $name-10])
-    +animation-duration([$duration-1, $duration-2, ..., $duration-10])
-    +animation-delay([$delay-1, $delay-2, ..., $delay-10])
-    +animation-timing-function([$function-1, $function-2, ..., $function-10])
-    +animation-iteration-count([$count-1, $count-2, ..., $count-10])
-    +animation-direction([$direction-1, $direction-2, ..., $direction-10])
-    +animation-fill-mode([$mode-1, $mode-2, ..., $mode-10])
-    +animation-play-state([$state-1, $state-2, ..., $state-10])
+    @include animation-name([$name-1, $name-2, ..., $name-10]);
+    @include animation-duration([$duration-1, $duration-2, ..., $duration-10]);
+    @include animation-delay([$delay-1, $delay-2, ..., $delay-10]);
+    @include animation-timing-function([$function-1, $function-2, ..., $function-10]);
+    @include animation-iteration-count([$count-1, $count-2, ..., $count-10]);
+    @include animation-direction([$direction-1, $direction-2, ..., $direction-10]);
+    @include animation-fill-mode([$mode-1, $mode-2, ..., $mode-10]);
+    @include animation-play-state([$state-1, $state-2, ..., $state-10]);
 
     // shortcut to apply and adjust
-    +animation([$animation-1, $animation-2, ..., animation-10])
+    @include animation([$animation-1, $animation-2, ..., animation-10]);
 
 There are default variables available for all of them:
 
-    $default-animation-name             : false
-    $default-animation-duration         : false
-    $default-animation-delay            : false
-    $default-animation-timing-function  : false
-    $default-animation-iteration-count  : false
-    $default-animation-direction        : false
-    $default-animation-fill-mode        : false
-    $default-animation-play-state       : false
+    $default-animation-name             : false;
+    $default-animation-duration         : false;
+    $default-animation-delay            : false;
+    $default-animation-timing-function  : false;
+    $default-animation-iteration-count  : false;
+    $default-animation-direction        : false;
+    $default-animation-fill-mode        : false;
+    $default-animation-play-state       : false;
+
+## For Example
+
+Say you want to create your own animation. Start with the keyframes:
+
+    @keyframes(my-animation) {
+      0%, 100% {
+        background-color: blue
+      }
+      50% {
+        background-color: red
+      }
+    }
+
+That animation will change the background color from blue to red to blue again. Now let's apply it to something:
+
+    body {
+      @include animation(my-animation 10s infinite);
+    }
+
+Compare that to the official CSS:
+
+    @keyframes my-animation {
+      0%, 100% {
+        background-color: blue
+      }
+      50% {
+        background-color: red
+      }
+    }
+
+    body {
+      animation: my-animation 10s infinite;
+    }
+
+Pretty much identical. You're just using include/argument pairs instead of property/value pairs.
+
 
 ## Animate.css
 
@@ -70,6 +108,14 @@ That will create the following named animations:
 * Specials
   - `hinge` `rollIn` `rollOut`
 
+You can use them like this:
+
+    .widget {
+      @include animation(fadeIn)
+    }
+
 You can also import a set of predefined classes for each animation:
 
     @import animation/animate/classes
+
+With those classes imported, you can simply add the class of `fadeIn` to any element, and watch it do the magic. That's all there is to it.
