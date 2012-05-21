@@ -17,12 +17,15 @@
 //  - rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight
 // Rotating exits
 //  - rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight
+// Lightspeed
+//  - lightSpeedIn lightSpeedOut
 // Specials
 //  - hinge rollIn rollOut
 // ---------------------------------------------------------------------------
-@import "animate/fading";
-@import "animate/bouncing";
-@import "animate/rotating";
-@import "animate/flippers";
 @import "animate/attention-seekers";
+@import "animate/bouncing";
+@import "animate/fading";
+@import "animate/flippers";
+@import "animate/lightspeed";
+@import "animate/rotating";
 @import "animate/specials";
