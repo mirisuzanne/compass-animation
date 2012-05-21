@@ -124,3 +124,29 @@
     @include scale(1.1); }
   100% {
     @include scale(1); } }
+    
+    
+// ---------------------------------------------------------------------------
+@include keyframes(wiggle) {
+  0% {
+    @include skewX(9deg); }
+  10% {
+    @include skewX(-8deg); }
+  20% {
+    @include skewX(7deg); }
+  30% {
+    @include skewX(-6deg); }
+  40% {
+    @include skewX(5deg); }
+  50% {
+    @include skewX(-4deg); }
+  60% {
+    @include skewX(3deg); }
+  70% {
+    @include skewX(-2deg); }
+  80% {
+    @include skewX(1deg); }
+  90% {
+    @include skewX(0deg); }
+  100% {
+    @include skewX(0deg); } }
