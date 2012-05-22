@@ -1,9 +1,19 @@
 Animation Compass Plugin
 ========================
 
-First and foremost, this plugin gives you all the tools you need to write and apply css3 animations in compass. As a bonus, and only if you so choose, it also supplies you with a "shit-ton" (roughly 2 metric tons) of pre-fabricated animations taken from Dan Eden's "[Animate.css](http://daneden.me/animate/)" project.
+First and foremost, 
+this plugin gives you all the tools you need 
+to write and apply css3 animations in compass. 
+As a bonus, and only if you so choose, 
+it also supplies you with a "shit-ton" 
+(roughly 2 metric tons) 
+of pre-fabricated animations 
+taken from Dan Eden's 
+"[Animate.css](http://daneden.me/animate/)" project.
 
-**This plugin requires the most recent alpha releases of Sass 3.2.0 (alpha.95) and Compass 0.12.0.**
+**This plugin requires the most recent alpha releases of 
+Sass 3.2.0 (alpha.95) and 
+Compass 0.12.0.**
 
     gem install animation --pre
 
@@ -13,109 +23,141 @@ First and foremost, this plugin gives you all the tools you need to write and ap
 
 ## Animation
 
-The default import only includes the core mixins for creating animations. That covers all the expected properties, to be used exactly as you would in CSS:
+The default import only includes the core mixins for creating animations. 
+That covers all the expected properties, 
+to be used exactly as you would in CSS:
 
-    // create your animation
-    @include keyframes($name) {
-      @content;
-    }
+```scss
+// create your animation
+@include keyframes($name) {
+  @content;
+}
 
-    // apply animation(s) and adjust settings
-    @include animation-name([$name-1, $name-2, ..., $name-10]);
-    @include animation-duration([$duration-1, $duration-2, ..., $duration-10]);
-    @include animation-delay([$delay-1, $delay-2, ..., $delay-10]);
-    @include animation-timing-function([$function-1, $function-2, ..., $function-10]);
-    @include animation-iteration-count([$count-1, $count-2, ..., $count-10]);
-    @include animation-direction([$direction-1, $direction-2, ..., $direction-10]);
-    @include animation-fill-mode([$mode-1, $mode-2, ..., $mode-10]);
-    @include animation-play-state([$state-1, $state-2, ..., $state-10]);
+// apply animation(s) and adjust settings
+@include animation-name([$name-1, $name-2, ..., $name-10]);
+@include animation-duration([$duration-1, $duration-2, ..., $duration-10]);
+@include animation-delay([$delay-1, $delay-2, ..., $delay-10]);
+@include animation-timing-function([$function-1, $function-2, ..., $function-10]);
+@include animation-iteration-count([$count-1, $count-2, ..., $count-10]);
+@include animation-direction([$direction-1, $direction-2, ..., $direction-10]);
+@include animation-fill-mode([$mode-1, $mode-2, ..., $mode-10]);
+@include animation-play-state([$state-1, $state-2, ..., $state-10]);
 
-    // shortcut to apply and adjust
-    @include animation([$animation-1, $animation-2, ..., animation-10]);
+// shortcut to apply and adjust
+@include animation([$animation-1, $animation-2, ..., animation-10]);
+```
 
 There are default variables available for all of them:
 
-    $default-animation-name             : false;
-    $default-animation-duration         : false;
-    $default-animation-delay            : false;
-    $default-animation-timing-function  : false;
-    $default-animation-iteration-count  : false;
-    $default-animation-direction        : false;
-    $default-animation-fill-mode        : false;
-    $default-animation-play-state       : false;
+```scss
+$default-animation-name             : false;
+$default-animation-duration         : false;
+$default-animation-delay            : false;
+$default-animation-timing-function  : false;
+$default-animation-iteration-count  : false;
+$default-animation-direction        : false;
+$default-animation-fill-mode        : false;
+$default-animation-play-state       : false;
+```
 
 ## For Example
 
-Say you want to create your own animation. Start with the keyframes:
+Say you want to create your own animation. 
+Start with the keyframes:
 
-    @keyframes(my-animation) {
-      0%, 100% {
-        background-color: blue;
-      }
-      50% {
-        background-color: red;
-      }
-    }
+```scss
+@keyframes(my-animation) {
+  0%, 100% {
+    background-color: blue;
+  }
+  50% {
+    background-color: red;
+  }
+}
+```
 
-That animation will change the background color from blue to red to blue again. Now let's apply it to something:
+That animation will change the background color 
+from blue to red to blue again. 
+Now let's apply it to something:
 
-    body {
-      @include animation(my-animation 10s infinite);
-    }
+```scss
+body {
+  @include animation(my-animation 10s infinite);
+}
+```
 
-Compare that to the official CSS:
+Compare that to the official CSS spec:
 
-    @keyframes my-animation {
-      0%, 100% {
-        background-color: blue;
-      }
-      50% {
-        background-color: red;
-      }
-    }
+```css
+@keyframes my-animation {
+  0%, 100% {
+    background-color: blue;
+  }
+  50% {
+    background-color: red;
+  }
+}
 
-    body {
-      animation: my-animation 10s infinite;
-    }
+body {
+  animation: my-animation 10s infinite;
+}
+```
 
-Pretty much identical. You're just using include/argument pairs instead of property/value pairs.
-
+Pretty much identical. 
+You're just using include/argument pairs 
+instead of property/value pairs.
 
 ## Animate.css
 
-Because the Animate code creates output, you need to import it (or one of it's sob-modules) directly:
+Because the Animate code creates output, 
+you need to import it (or one of it's sob-modules) directly:
 
     @import "animation/animate";
 
 That will create the following named animations:
 
-* Attention seekers
-  - `flash` `bounce` `shake` `tada` `swing` `wobble` `pulse`
-* Fading entrances
-  - `fadeIn` `fadeInUp` `fadeInDown` `fadeInLeft` `fadeInRight` `fadeInUpBig` `fadeInDownBig` `fadeInLeftBig` `fadeInRightBig`
-* Fading exits
-  - `fadeOut` `fadeOutUp` `fadeOutDown` `fadeOutLeft` `fadeOutRight` `fadeOutUpBig` `fadeOutDownBig` `fadeOutLeftBig` `fadeOutRightBig`
-* Bouncing entrances
-  - `bounceIn` `bounceInDown` `bounceInUp` `bounceInLeft` `bounceInRight`
-* Bouncing exits
-  - `bounceOut` `bounceOutDown` `bounceOutUp` `bounceOutLeft` `bounceOutRight`
-* Rotating entrances
-  - `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
-* Rotating exits
-  - `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
-* Flippers
-  - `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
-* Specials
-  - `hinge` `rollIn` `rollOut`
+- Attention seekers
+  - flash, bounce, shake, tada, swing, wobble, wiggle, pulse
+- Flippers (currently Webkit, Firefox, & IE10 only)
+  - flip, flipInX, flipOutX, flipInY, flipOutY
+- Fading entrances
+  - fadeIn, fadeInUp, fadeInDown, fadeInLeft, fadeInRight, 
+    fadeInUpBig, fadeInDownBig, fadeInLeftBig, fadeInRightBig
+- Fading exits
+  - fadeOut, fadeOutUp, fadeOutDown, fadeOutLeft, fadeOutRight,
+    fadeOutUpBig, fadeOutDownBig, fadeOutLeftBig, fadeOutRightBig
+- Bouncing entrances
+  - bounceIn, bounceInDown, bounceInUp, bounceInLeft, bounceInRight
+- Bouncing exits
+  - bounceOut, bounceOutDown, bounceOutUp, 
+    bounceOutLeft, bounceOutRight
+- Rotating entrances
+  - rotateIn, rotateInDownLeft, rotateInDownRight, 
+    rotateInUpLeft, rotateInUpRight
+- Rotating exits
+  - rotateOut, rotateOutDownLeft, rotateOutDownRight, 
+    rotateOutUpLeft, rotateOutUpRight
+- Lightspeed
+  - lightSpeedIn, lightSpeedOut
+- Specials
+  - hinge, rollIn, rollOut
 
 You can use them like this:
 
-    .widget {
-      @include animation(fadeIn);
-    }
+```scss
+.widget {
+  @include animation(fadeIn);
+}
+```
 
 You can also import a set of predefined classes for each animation:
 
-    @import "animation/animate/classes";
+```scss
+@import "animation/animate/classes";
+```
 
-With those classes imported, you can simply add the class of `fadeIn` to any element, and watch it do the magic. That's all there is to it.
+With those classes imported, 
+you can simply add the class of `fadeIn` to any element, 
+and watch it do the magic. 
+
+That's all there is to it.
