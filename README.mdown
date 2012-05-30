@@ -1,3 +1,9 @@
+**Note:** If you are just looking for Dan Eden's Animate.css ported to Compass, 
+I recommend my newer [compass-animate][animate] plugin. 
+This plugin is mainly for adding animations to older versions of Compass.
+
+[animate]: https://github.com/ericam/compass-animate
+
 Animation Compass Plugin
 ========================
 
