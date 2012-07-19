@@ -72,7 +72,7 @@ Say you want to create your own animation.
 Start with the keyframes:
 
 ```scss
-@keyframes(my-animation) {
+@include keyframes(my-animation) {
   0%, 100% {
     background-color: blue;
   }
