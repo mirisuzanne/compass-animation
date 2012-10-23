@@ -17,9 +17,9 @@ of pre-fabricated animations
 taken from Dan Eden's 
 "[Animate.css](http://daneden.me/animate/)" project.
 
-**This plugin requires the most recent alpha releases of 
-Sass 3.2.0 (alpha.95) and 
-Compass 0.12.0.**
+**This plugin requires
+Sass 3.2 and 
+Compass 0.12**
 
     gem install animation --pre
 
