@@ -1,5 +1,5 @@
-**Note:** If you are just looking for Dan Eden's Animate.css ported to Compass, 
-I recommend my newer [compass-animate][animate] plugin. 
+**Note:** If you are just looking for Dan Eden's Animate.css ported to Compass,
+I recommend my newer [compass-animate][animate] plugin.
 This plugin is mainly for adding animations to older versions of Compass.
 
 [animate]: https://github.com/ericam/compass-animate
@@ -7,30 +7,30 @@ This plugin is mainly for adding animations to older versions of Compass.
 Animation Compass Plugin
 ========================
 
-First and foremost, 
-this plugin gives you all the tools you need 
-to write and apply css3 animations in compass. 
-As a bonus, and only if you so choose, 
-it also supplies you with a "shit-ton" 
-(roughly 2 metric tons) 
-of pre-fabricated animations 
-taken from Dan Eden's 
+First and foremost,
+this plugin gives you all the tools you need
+to write and apply css3 animations in compass.
+As a bonus, and only if you so choose,
+it also supplies you with a "shit-ton"
+(roughly 2 metric tons)
+of pre-fabricated animations
+taken from Dan Eden's
 "[Animate.css](http://daneden.me/animate/)" project.
 
 **This plugin requires
-Sass 3.2 and 
+Sass 3.2 and
 Compass 0.12**
 
-    gem install animation --pre
+    gem install compass-animation --pre
 
-    require 'animation'
+    require 'compass-animation'
 
     @import "animation";
 
 ## Animation
 
-The default import only includes the core mixins for creating animations. 
-That covers all the expected properties, 
+The default import only includes the core mixins for creating animations.
+That covers all the expected properties,
 to be used exactly as you would in CSS:
 
 ```scss
@@ -68,7 +68,7 @@ $default-animation-play-state       : false;
 
 ## For Example
 
-Say you want to create your own animation. 
+Say you want to create your own animation.
 Start with the keyframes:
 
 ```scss
@@ -82,8 +82,8 @@ Start with the keyframes:
 }
 ```
 
-That animation will change the background color 
-from blue to red to blue again. 
+That animation will change the background color
+from blue to red to blue again.
 Now let's apply it to something:
 
 ```scss
@@ -109,13 +109,13 @@ body {
 }
 ```
 
-Pretty much identical. 
-You're just using include/argument pairs 
+Pretty much identical.
+You're just using include/argument pairs
 instead of property/value pairs.
 
 ## Animate.css
 
-Because the Animate code creates output, 
+Because the Animate code creates output,
 you need to import it (or one of it's sob-modules) directly:
 
     @import "animation/animate";
@@ -127,7 +127,7 @@ That will create the following named animations:
 - Flippers (currently Webkit, Firefox, & IE10 only)
   - flip, flipInX, flipOutX, flipInY, flipOutY
 - Fading entrances
-  - fadeIn, fadeInUp, fadeInDown, fadeInLeft, fadeInRight, 
+  - fadeIn, fadeInUp, fadeInDown, fadeInLeft, fadeInRight,
     fadeInUpBig, fadeInDownBig, fadeInLeftBig, fadeInRightBig
 - Fading exits
   - fadeOut, fadeOutUp, fadeOutDown, fadeOutLeft, fadeOutRight,
@@ -135,13 +135,13 @@ That will create the following named animations:
 - Bouncing entrances
   - bounceIn, bounceInDown, bounceInUp, bounceInLeft, bounceInRight
 - Bouncing exits
-  - bounceOut, bounceOutDown, bounceOutUp, 
+  - bounceOut, bounceOutDown, bounceOutUp,
     bounceOutLeft, bounceOutRight
 - Rotating entrances
-  - rotateIn, rotateInDownLeft, rotateInDownRight, 
+  - rotateIn, rotateInDownLeft, rotateInDownRight,
     rotateInUpLeft, rotateInUpRight
 - Rotating exits
-  - rotateOut, rotateOutDownLeft, rotateOutDownRight, 
+  - rotateOut, rotateOutDownLeft, rotateOutDownRight,
     rotateOutUpLeft, rotateOutUpRight
 - Lightspeed
   - lightSpeedIn, lightSpeedOut
@@ -162,8 +162,8 @@ You can also import a set of predefined classes for each animation:
 @import "animation/animate/classes";
 ```
 
-With those classes imported, 
-you can simply add the class of `fadeIn` to any element, 
-and watch it do the magic. 
+With those classes imported,
+you can simply add the class of `fadeIn` to any element,
+and watch it do the magic.
 
 That's all there is to it.

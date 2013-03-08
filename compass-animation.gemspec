@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.version = "0.1.alpha.3"
 
   # Gem Details
-  s.name = "animation"
+  s.name = "compass-animation"
   s.authors = ["Eric Meyer"]
   s.summary = %q{css3 animations plugin for compass}
   s.description = %q{css3 animations plugin for compass, with core animation mixins, and optional defaul animations from animate.css.}
@@ -19,4 +19,3 @@ Gem::Specification.new do |s|
   s.add_dependency("sass", [">= 3.2.0.alpha.95"])
   s.add_dependency("compass", [">= 0.12.0"])
 end
-
