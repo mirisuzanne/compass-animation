@@ -95,7 +95,7 @@ body {
 Compare that to the official CSS spec:
 
 ```css
-@include keyframes my-animation {
+@keyframes my-animation {
   0%, 100% {
     background-color: blue;
   }
