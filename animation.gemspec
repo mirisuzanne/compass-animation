@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   # Release Specific Information
-  s.version = "0.1.alpha.3"
+  s.version = "0.1.alpha.4"
 
   # Gem Details
   s.name = "animation"
-  s.authors = ["Eric Meyer"]
+  s.authors = ["Eric Meyer", "Jeff Micklos"]
   s.summary = %q{css3 animations plugin for compass}
   s.description = %q{css3 animations plugin for compass, with core animation mixins, and optional defaul animations from animate.css.}
   s.email = "eric@oddbird.net"
