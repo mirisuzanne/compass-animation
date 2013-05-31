@@ -125,3 +125,10 @@ $default-animation-play-state       : false !default;
     $animation-1: -compass-space-list(compact($default-animation-name, $default-animation-duration, $default-animation-timing-function, $default-animation-delay, $default-animation-iteration-count, $default-animation-direction, $default-animation-fill-mode, $default-animation-play-state)); }
   $animation: compact($animation-1, $animation-2, $animation-3, $animation-4, $animation-5, $animation-6, $animation-7, $animation-8, $animation-9, $animation-10);
   @include animation-support(animation, $animation); }
+
+// Provides an interface to generate one animation declaration.
+// Called using comma-seperated values, which keeps consistency
+// with other compass calls.
+@mixin single-animation($animation-name: $default-animation-name, $animation-duration: $default-animation-duration, $animation-delay: $default-animation-delay, $animation-timing-function: $default-animation-timing-function, $animation-iteration-count: $default-animation-iteration-count, $animation-direction: $default-animation-direction, $animation-fill-mode: $default-animation-fill-mode, $animation-play-state: $default-animation-play-state) {
+  @include animation(-compass-space-list(compact($animation-name, $animation-duration, $animation-delay, $animation-timing-function, $animation-iteration-count, $animation-direction, $animation-fill-mode, $animation-play-state)))
+}
