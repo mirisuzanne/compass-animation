@@ -1,18 +1,18 @@
 @mixin set-experimental-support($moz: false, $webkit: false, $ms: false, $o: false, $khtml: false) {
-  $experimental-support-for-mozilla: $moz;
-  $experimental-support-for-webkit: $webkit;
-  $experimental-support-for-microsoft: $ms;
-  $experimental-support-for-opera: $o;
-  $experimental-support-for-khtml: $khtml;
+	$experimental-support-for-mozilla  : $moz    !global;
+	$experimental-support-for-webkit   : $webkit !global;
+	$experimental-support-for-microsoft: $ms     !global;
+	$experimental-support-for-opera    : $o      !global;
+	$experimental-support-for-khtml    : $khtml  !global;
 }
 
 @mixin with-only-support-for($moz: false, $webkit: false, $ms: false, $o: false, $khtml: false) {
   // Capture the current state
-  $original-moz: $experimental-support-for-mozilla;
-  $original-webkit: $experimental-support-for-webkit;
-  $original-o: $experimental-support-for-opera;
-  $original-ms: $experimental-support-for-microsoft;
-  $original-khtml: $experimental-support-for-khtml;
+	$original-moz   : $experimental-support-for-mozilla;
+	$original-webkit: $experimental-support-for-webkit;
+	$original-o     : $experimental-support-for-opera;
+	$original-ms    : $experimental-support-for-microsoft;
+	$original-khtml : $experimental-support-for-khtml;
 
   @include set-experimental-support($moz, $webkit, $ms, $o, $khtml);
 
